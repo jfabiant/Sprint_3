@@ -1,5 +1,6 @@
 package pe.edu.tecsup.jfabiant.loginapp.activities.acivities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
@@ -27,8 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private Button loginButton;
     private Button showUserButton;
 
-    private Retrofit retrofit;
-    private ApiService service;
+    ApiService service = ApiServiceGenerator.createService(MainActivity.this , ApiService.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +38,6 @@ public class MainActivity extends AppCompatActivity {
         passwordInput = findViewById(R.id.password_input);
         loginButton = findViewById(R.id.login_button);
         showUserButton = findViewById(R.id.showUser_button);
-
-        retrofit = new Retrofit.Builder().baseUrl("https://medibot-api-jfabiantimoteotorres.c9users.io")
-                .addConverterFactory(GsonConverterFactory.create()).build();
-
-        service = retrofit.create(ApiService.class);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -26,33 +26,6 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        usernameText = findViewById(R.id.username_text);
-        emailText = findViewById(R.id.email_text);
-        logoutButton = findViewById(R.id.logout_button);
-
-        ApiService service = ApiServiceGenerator.createService(ApiService.class);
-
-        Call<User> call = null;
-        call = service.getUser();
-
-        call.enqueue(new Callback<User>() {
-            @Override
-            public void onResponse(Call<User> call, Response<User> response) {
-                try{
-                    if (response.isSuccessful()) {
-                        Toast.makeText(DashboardActivity.this,"Username: "+response.body().getUsername(), Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(DashboardActivity.this,"La respuesta no fue exitosa", Toast.LENGTH_SHORT).show();
-                    }
-                }catch (Throwable t){
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<User> call, Throwable t) {
-            }
-        });
 
     }
 
