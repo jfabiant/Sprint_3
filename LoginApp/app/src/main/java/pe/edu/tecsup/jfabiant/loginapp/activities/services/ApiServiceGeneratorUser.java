@@ -2,11 +2,9 @@ package pe.edu.tecsup.jfabiant.loginapp.activities.services;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.util.Log;
 
 import java.io.IOException;
-import java.lang.String;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Interceptor;
@@ -19,13 +17,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import static android.content.Context.MODE_PRIVATE;
 
-public final class ApiServiceGenerator {
+public final class ApiServiceGeneratorUser {
 
     private static Retrofit retrofit;
 
-    private static final String TAG = ApiServiceGenerator.class.getSimpleName();
+    private static final String TAG = ApiServiceGeneratorUser.class.getSimpleName();
 
-    private ApiServiceGenerator() {
+    private ApiServiceGeneratorUser() {
     }
 
     public static <S> S createService(final Context context, Class<S> serviceClass) {
@@ -56,7 +54,7 @@ public final class ApiServiceGenerator {
                         }
 
                         Request modifiedRequest = originalRequest.newBuilder()
-                                .header("Authorization", " Token "+token)
+                                .header("Authorization", "")
                                 .build();
 
                         Log.d("Token passing: ", modifiedRequest.toString());

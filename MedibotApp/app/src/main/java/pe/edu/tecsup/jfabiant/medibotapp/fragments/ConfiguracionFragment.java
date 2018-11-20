@@ -4,22 +4,11 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
-
-import java.util.List;
 
 import pe.edu.tecsup.jfabiant.medibotapp.R;
-import pe.edu.tecsup.jfabiant.medibotapp.adapters.UsuarioAdapter;
-import pe.edu.tecsup.jfabiant.medibotapp.models.Usuario;
-import pe.edu.tecsup.jfabiant.medibotapp.services.ApiService;
-import pe.edu.tecsup.jfabiant.medibotapp.services.ApiServiceGenerator;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class ConfiguracionFragment extends Fragment {
 

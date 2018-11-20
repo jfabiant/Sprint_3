@@ -25,5 +25,10 @@ public interface ApiService {
     @GET("/rest-auth/user/")
     Call <User> getUser();
 
+    @FormUrlEncoded
+    @POST("/rest-auth/logout/")
+    Call<Login> logout(@Field("username") String username,
+                       @Field("password") String password);
+
 
 }
